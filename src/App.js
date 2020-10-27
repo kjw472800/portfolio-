@@ -1,6 +1,5 @@
-import React from 'react';
-import { Switch, Route, Link as RouterLink, Redirect } from 'react-router-dom'
-import { Box,Button,Grid, Avatar,Link,Paper ,List,ListItem,ListItemIcon,ListItemText, Typography,SvgIcon, Divider, CssBaseline  } from '@material-ui/core';
+import React,{useState} from 'react';
+import { CssBaseline,Container, Hidden} from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/Inbox';
 import Resume from './resume/Resume';
 
@@ -14,22 +13,41 @@ import WorkIcon from '@material-ui/icons/Work';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 
 import { makeStyles } from '@material-ui/core/styles';
+import Header from './layout/Header';
+
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Main from './layout/Main';
+import SideDrawer from './layout/SideDrawer';
 
 
 
 function App() {
-
-
-
-  return (
-    <React.Fragment>
-        <CssBaseline/>
-
-
+  const darkTheme  = createMuiTheme({
+    palette: {
+      type: 'dark',
+    },
+  });
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+  const sideDrawerCloseHandler=()=>setSideDrawerOpen(false);
+  const sideDrawerOpenHandler=()=>setSideDrawerOpen(true);
   
-    </React.Fragment>
-
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline/>
+        <Header menuHandler={sideDrawerOpenHandler}/>   
+        <Main/>
+        <Hidden mdUp>
+          <SideDrawer open={sideDrawerOpen} sideDrawerCloseHandler={sideDrawerCloseHandler}/>
+        </Hidden> 
+    </ThemeProvider>
   );
 }
 
 export default App;
+
+
+/*
+git remote add origin https://github.com/kjw472800/portfolio-.git
+git branch -M main
+git push -u origin main
+*/
