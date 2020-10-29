@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {List,ListItem,ListItemIcon,ListItemText,Divider} from '@material-ui/core';
+import {List,ListItem,ListItemIcon,ListItemText,Divider,IconButton} from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import HomeIcon from '@material-ui/icons/Home';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import WorkIcon from '@material-ui/icons/Work';
@@ -26,7 +26,7 @@ const NavLists=(props)=>{
         history.push(path);
     }
     return (
-        <div className={classes.root}>
+        <div >
             <List component="nav" aria-label="main mailbox folders">
                 <ListItem
                 button
@@ -58,37 +58,32 @@ const NavLists=(props)=>{
                     </ListItemIcon>
                     <ListItemText primary="Resume" />
                 </ListItem>
-                <ListItem
+                {/* <ListItem
                 button
                 selected={selectedIndex === 3}
-                onClick={(event) =>  clickHandler(event, 3,'/Contact')}
+                onClick={(event) =>  clickHandler(event, 3,'/contact')}
                 >
                     <ListItemIcon>
                         <ContactMailIcon />
                     </ListItemIcon>
                     <ListItemText primary="Contact" />
-                </ListItem>
+                </ListItem> */}
             </List>
             <Divider />
             <List component="nav" aria-label="secondary mailbox folder">
-                <ListItem
-                button
-                selected={selectedIndex === 4}
-                onClick={(event) => setSelectedIndex( 4)}
-                >
-                <ListItemText primary="Trash" />
-                </ListItem>
-                <ListItem
-                button
-                selected={selectedIndex === 5}
-                onClick={(event) => setSelectedIndex( 5)}
-                >
-                <ListItemText primary="Spam" />
+                <ListItem>
+                <IconButton aria-label="github" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_center">
+                    <GitHubIcon />
+                </IconButton>
+                <IconButton aria-label="Linkedln" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_center" >
+                    <LinkedInIcon />
+                </IconButton>
                 </ListItem>
             </List>
         </div>
     );
 }
 
+                
 
 export default NavLists;

@@ -30,7 +30,7 @@ const About= ()=>{
     const classes = useStyles();
 
     return (
-        <React.Fragment>
+        <Box bgcolor='background.'>
         <Card > 
             <Grid container>
                 <Grid container item xs={12} md={3} >         
@@ -120,7 +120,11 @@ const About= ()=>{
                             </ListItem>
                             
                             <ListItem >
-                            <ListItemText primary="Git/Github" />
+                            <ListItemText primary="Verilog" />
+                            </ListItem>
+                            
+                            <ListItem >
+                            <ListItemText primary="CUDA" />
                             </ListItem>
 
                             <ListItem >
@@ -149,7 +153,7 @@ const About= ()=>{
 
             </Box>
         </Card>
-        </React.Fragment>
+        </Box>
     )
 }
 

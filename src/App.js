@@ -40,7 +40,7 @@ function App() {
         <Hidden mdUp>
           <SideDrawer open={sideDrawerOpen} sideDrawerCloseHandler={sideDrawerCloseHandler}/>
         </Hidden> 
-        <Footer/>
+        <Footer title="Footer" description="YES"/>
     </ThemeProvider>
   );
 }
