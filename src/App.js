@@ -18,6 +18,7 @@ import Header from './layout/Header';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Main from './layout/Main';
 import SideDrawer from './layout/SideDrawer';
+import Footer from './layout/Footer';
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Hidden mdUp>
           <SideDrawer open={sideDrawerOpen} sideDrawerCloseHandler={sideDrawerCloseHandler}/>
         </Hidden> 
+        <Footer/>
     </ThemeProvider>
   );
 }

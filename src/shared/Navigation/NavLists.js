@@ -31,12 +31,22 @@ const NavLists=(props)=>{
                 <ListItem
                 button
                 selected={selectedIndex === 0}
-                onClick={(event) => clickHandler(event, 0,'/')}
+                onClick={(event) => clickHandler(event, 0,'/about')}
                 >
                     <ListItemIcon>
                         <HomeIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Home" />
+                    <ListItemText primary="About" />
+                </ListItem>
+                <ListItem
+                button
+                selected={selectedIndex === 2}
+                onClick={(event) => clickHandler(event, 2,'/projects')}
+                >
+                    <ListItemIcon>
+                        <WorkIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Projects" />
                 </ListItem>
                 <ListItem
                 button
@@ -44,19 +54,9 @@ const NavLists=(props)=>{
                 onClick={(event) => clickHandler(event, 1,'/resume')}
                 >
                     <ListItemIcon>
-                        <WorkIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Resume" />
-                </ListItem>
-                <ListItem
-                button
-                selected={selectedIndex === 2}
-                onClick={(event) => clickHandler(event, 2,'/Works')}
-                >
-                    <ListItemIcon>
                         <AssignmentIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Works" />
+                    <ListItemText primary="Resume" />
                 </ListItem>
                 <ListItem
                 button

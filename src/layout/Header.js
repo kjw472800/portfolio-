@@ -11,6 +11,7 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -24,7 +25,7 @@ const Header=(props)=>{
     const classes = useStyles();
 
     return (
-        <div>
+        <div className={classes.root}>
             <AppBar position="sticky">
                 <Toolbar>
                     <Hidden mdUp>
